@@ -1,0 +1,287 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #263238;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px 5%;
+    background: #17365d;
+    color: white;
+}
+
+.brand {
+    font-size: 21px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: min(1100px, 92%);
+    min-height: 75vh;
+    margin: 32px auto;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+h1 {
+    margin: 0 0 6px;
+    color: #17365d;
+}
+
+.page-header p {
+    margin: 0;
+    color: #667085;
+}
+
+.card {
+    padding: 24px;
+    margin-bottom: 24px;
+    background: white;
+    border: 1px solid #e0e5eb;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group > label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd2da;
+    border-radius: 6px;
+    background: white;
+    color: #263238;
+    font: inherit;
+}
+
+.form-control:focus {
+    outline: 2px solid #9bc3ff;
+    border-color: #2864b4;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.required {
+    color: #c62828;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 9px 14px;
+    border: 0;
+    border-radius: 6px;
+    font: inherit;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background: #245da8;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #194780;
+}
+
+.btn-secondary {
+    background: #e8edf3;
+    color: #263238;
+}
+
+.btn-secondary:hover {
+    background: #d6dfe9;
+}
+
+.btn-danger {
+    background: #c62828;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #a71d1d;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #e5e9ef;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background: #edf2f8;
+    color: #17365d;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+.actions {
+    white-space: nowrap;
+}
+
+.actions .btn {
+    margin: 2px;
+}
+
+.alert {
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+}
+
+.alert-success {
+    background: #e7f6ec;
+    color: #176b37;
+    border: 1px solid #b8e3c5;
+}
+
+.alert-error {
+    background: #fff0f0;
+    color: #9d2020;
+    border: 1px solid #f0c2c2;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.status.active {
+    background: #e7f6ec;
+    color: #176b37;
+}
+
+.status.inactive {
+    background: #f0f0f0;
+    color: #555;
+}
+
+.detail-card p {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #edf0f4;
+    overflow-wrap: anywhere;
+}
+
+.footer {
+    padding: 20px;
+    background: #17365d;
+    color: white;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .actions .btn {
+        margin-bottom: 5px;
+    }
+}
