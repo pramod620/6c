@@ -3,21 +3,20 @@
 namespace App\\Http\\Controllers\\Api;
 
 use App\\Http\\Controllers\\Controller;
-use App\\Http\\Requests\\StoreCourseRequest;
-use App\\Http\\Requests\\UpdateCourseRequest;
+use App\\Http\\Requests\\Course\\StoreCourseRequest;
+use App\\Http\\Requests\\Course\\UpdateCourseRequest;
 use App\\Http\\Resources\\CourseResource;
 use App\\Models\\Course;
-use Illuminate\\Http\\Resources\\Json\\AnonymousResourceCollection;
-use Illuminate\\Http\\Response;
+use Illuminate\\Http\\JsonResponse;
 
 class CourseController extends Controller
 {
-    public function index(): AnonymousResourceCollection
+    public function index()
     {
-        return CourseResource::collection(Course::query()->latest()->paginate(10));
+        return CourseResource::collection(Course::all());
     }
 
-    public function store(StoreCourseRequest $request): CourseResource
+    public function store(StoreCourseRequest $request)
     {
         $course = Course::create($request->validated());
 
@@ -26,22 +25,22 @@ class CourseController extends Controller
             ->setStatusCode(201);
     }
 
-    public function show(Course $course): CourseResource
+    public function show(Course $course)
     {
         return new CourseResource($course);
     }
 
-    public function update(UpdateCourseRequest $request, Course $course): CourseResource
+    public function update(UpdateCourseRequest $request, Course $course)
     {
         $course->update($request->validated());
 
-        return new CourseResource($course->refresh());
+        return new CourseResource($course->fresh());
     }
 
-    public function destroy(Course $course): Response
+    public function destroy(Course $course): JsonResponse
     {
         $course->delete();
 
-        return response()->noContent();
+        return response()->json(null, 204);
     }
 }
